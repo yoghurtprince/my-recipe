@@ -1,0 +1,27 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/projects
+      to: /home/vagrant/projects
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/projects/l4/public
+    - map: m.app
+      to: /home/vagrant/projects/magento/
+    - map: recip
+      to: /home/vagrant/projects/recipe-finder
+    - map: s2
+      to: /home/vagrant/projects/s2
+
+variables:
+    - key: APP_ENV
+      value: local

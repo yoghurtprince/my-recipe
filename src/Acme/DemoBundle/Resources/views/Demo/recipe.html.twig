@@ -1,0 +1,33 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Recipe form" %}
+
+{% block content %}
+
+	{% if results is defined %}
+
+	
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">What to cook tonight?</h3>
+	  </div>
+	  <div class="panel-body">
+		{{results}}
+	  </div>
+	</div>
+
+	{% endif %}
+		
+	    <form action="{{ path('_demo_recipe') }}" method="POST" id="recipe_form" {{ form_enctype(form) }}>
+	        {{ form_errors(form) }}
+	
+	        {{ form_row(form.item) }}
+	        {{ form_row(form.recipe) }}
+	
+	        {{ form_rest(form) }}
+	
+	    </form>
+	    
+
+    
+{% endblock %}
